@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Seymour+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Seymour+One&family=Source+Sans+Pro:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Seymour+One&family=Source+Sans+Pro:wght@200&family=Unbounded:wght@500&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(#68E6CE, #497EDF);
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+form {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    /* width: 100%;
+    height: 100%; */
+    text-decoration: none;
+    color: inherit;
+}
+
+#main {
+    width: 50vw;
+    height: 84vh;
+    background: whitesmoke;
+    margin: 4% auto;
+    position: relative;
+}
+
+#title {
+    padding-left: 2rem;
+    padding-top: 0.6rem;
+}
+
+#title h1 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Unbounded', cursive;
+    font-size: 1.7rem;
+}
+
+#ntc {
+    width: 95%;
+    margin: 2rem auto;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#tin {
+    width: 80%;
+}
+
+#nt_text {
+    width: 100%;
+    padding: 0.5rem 0;
+    padding-left: 0.5rem;
+    border: 1px solid grey;
+    font-weight: bold;
+}
+
+#tadd {
+    width: 19%;
+}
+
+#add {
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem 0;
+    padding-left: 0.5rem;
+}
+
+.btn {
+    background: #944AED;
+    color: white;
+    border-radius: 5%;
+    border-color: #944AED;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.disabled {
+    background: rgb(188, 176, 176);
+    color: white;
+    border-radius: 5%;
+    border: none;
+    font-weight: bold;
+}
+
+.btn:hover, .checkbox:hover {
+    transform: scale(1.2);
+    transition: 0.1s ease-in-out;
+}
+
+#list {
+    width: 100%;
+    height: 68%;
+    overflow-y: scroll;
+}
+
+#list p {
+    font-weight: bold;
+}
+
+.task-item {
+    width: 98%;
+    margin: 0.5rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F3F1F4;
+}
+
+.cb-container {
+    width: 7%;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.checkbox {
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+}
+
+.tn-container {
+    width: 88%;
+    padding-left: 1rem;
+}
+
+.delete-task-c {
+    width: 5%;
+    cursor: pointer;
+    color: #944AED;
+    visibility: hidden;
+    font-size: 1.3rem;
+}
+
+.task-item:hover .delete-task-c {
+    visibility: visible;
+}
+
+.delete-task-c:hover {
+    transform: scale(1.3);
+    transition: 0.1s ease-in-out;
+    color: rgb(216, 44, 44);
+}
+
+#bottom {
+    width: 100%;
+    height: 13%;
+    position: absolute;
+    bottom: -1rem;
+    background-color: #dfdbe4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#tinfo_container {
+    width: 50%;
+    margin-left: 1rem;
+}
+
+#tinfo {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+#ca_container {
+    width: 15%;
+    margin-right: 2rem;
+}
+
+#rm-done-c {
+    width: 20%;
+    margin-right: 0.1rem;
+}
+
+#clearAll, #rm-done {
+    width: 100%;
+    height: 3rem;
+}
+
+#clearAll a {
+    font-size: 1rem;
+}
+
+@media only screen and (max-width: 700px) {
+    #main {
+        width: 70vw;
+        height: 90vh;
+        margin: 6% auto;
+    }
+
+    #title h1 {
+        font-size: 1.5rem;
+    }
+
+    #tinfo_container, #ca_container {
+        margin-left: 0.5rem;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    #main {
+        width: 85vw;
+    }
+
+    .tn_container {
+        width: 80%;
+    }
+
+    .delete-task-c {
+        font-size: 1.1rem;
+        margin-right: 3%;
+    }
+}

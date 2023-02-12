@@ -1,0 +1,85 @@
+<%- include('header') -%>
+
+<div id="main">
+    <div id="title">
+            <h1>Add your today's todos</h1>
+    </div>
+    <form action="/tasks/add" method="post">
+        <div id="ntc">
+            <div id="tin">
+                <input id="nt_text" type="text" name="task" placeholder="Enter a task">
+            </div>
+            <div id="tadd">
+                <button id="add" class="btn" type="submit">Add
+                </button>
+            </div>
+        </div>
+    </form>
+    <div id="list">
+    <% const total=list.length;
+       let pending=total, completed=0;
+        list.forEach((taskItem) => { 
+            if(taskItem.completed) {
+                completed++;
+                pending--;
+            }
+    %>
+            <form action="/tasks/update/<%= taskItem._id %>" method="post">
+                <div class="task-item">
+                    <% if(taskItem.completed) { %>
+                    <div class="cb-container">
+                        <input type="checkbox" class="checkbox" onchange="this.form.submit()" checked/>
+                    </div>
+                    <div class="tn-container">
+                        <p class="task-name"><s><%= taskItem.task %></s></p>
+                    </div>
+                    <% } 
+                    else { %>
+                    <div class="cb-container">
+                        <input type="checkbox" class="checkbox" onchange="this.form.submit()"/>
+                    </div>
+                    <div class="tn-container">
+                        <p class="task-name"><%= taskItem.task %></p>
+                    </div>
+                    <% } %>
+                <div class="delete-task-c">
+                    <a href="/tasks/delete/<%= taskItem._id %>">
+                        <i class="fa-solid fa-trash"></i>
+                    </a>
+                </div>
+            </div>
+        </form>
+    <% }) %>
+    </div>
+    <div id="bottom">
+        <div id="tinfo_container">
+            <p id="tinfo">
+                Total: <%= total %>, Pending: <%= pending %>
+            </p>
+        </div>
+    <%  if(completed) { %>
+        <div id="rm-done-c">
+            <button id="rm-done" class="btn">
+                <a href="/tasks/removeCompleted">
+                    Delete All Completed Tasks
+                </a>
+            </button>
+        </div>
+    <% } 
+        else { %>
+            <div id="rm-done-c" class="grey">
+                <button id="rm-done" class="disabled">
+                    Delete All Completed Tasks
+                </button>
+            </div>
+        <% } %>
+        <div id="ca_container">
+            <button id="clearAll" class="btn">
+                <a href="/tasks/deleteAll">
+                    Clear All
+                </a>
+            </button>
+        </div>
+</div>
+
+<%- include('footer') -%>

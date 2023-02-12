@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="./public/styles.css">
+    <script src="https://kit.fontawesome.com/4f9275b3db.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="main">
+        <div id="title">
+                <h1>Add your today's todos</h1>
+        </div>
+        <form action="/routes/tasks.js" method="post">
+            <div id="ntc">
+                <div id="tin">
+                    <input id="nt_text" type="text" placeholder="Enter a task">
+                </div>
+                <div id="tadd">
+                    <button id="add" class="btn" type="submit">Add
+                    </button>
+                </div>
+            </div>
+        </form>
+        <div id="list">
+            <form action="/routes/tasks.js" method="post">
+                <div class="task-item">
+                    <div class="cb-container">
+                        <input type="checkbox" class="checkbox">
+                    </div>
+                    <div class="tn-container">
+                        <p class="task-name"></p>
+                    </div>
+                    <div class="delete-task-v">
+                        <i class="fa-solid fa-trash"></i>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="bottom">
+            <div id="tinfo_container">
+                <p id="tinfo">
+                    Total: 0, Pending: 0
+                </p>
+            </div>
+            <div id="ca_container">
+                <button id="clearAll" class="btn">
+                    <a href="/tasks/deleteAll">
+                        Clear All
+                    </a>
+                </button>
+            </div>
+    </div>
+</body>
+
+</html>
