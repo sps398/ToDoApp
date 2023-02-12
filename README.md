@@ -1,5 +1,5 @@
 A simple ToDoList app made using html, css, ejs, nodejs and mongodb.
 
-npm init.
+run npm init.
 
-to run app node app.js
+to start application run: app node app.js
